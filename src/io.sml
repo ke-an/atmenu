@@ -1,10 +1,10 @@
 
 open TextIO;
 
-val inputMsg  =  "----Enter text string----:\r\n";
-val inputCmnt =  "--------------------------\r\n";
+val inputMsg  =  "----Enter text string----:\r\n"
+val inputCmnt =  "--------------------------\r\n"
 
-fun inLine() = valOf(inputLine(stdIn));
+fun inLine() = valOf(inputLine(stdIn))
 
 fun do_do inL =
     let
@@ -12,8 +12,9 @@ fun do_do inL =
 	  let
 	      val upL = n ^ ".........\r\n"
 	  in
-	      print(upL)
-	  end;	
+	      print(upL);
+	      inputLine(stdIn)
+	  end;
     in
 	f inL
     end;
