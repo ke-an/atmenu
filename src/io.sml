@@ -6,14 +6,17 @@ val inputCmnt =  "--------------------------\r\n";
 
 fun inLine() = valOf(inputLine(stdIn));
 
-fun prompt inputMsg = print(inputMsg);
-
 fun do_do inL =
     let
-	val inpp = inL() ^ inputCmnt
+	fun f n =
+	  let
+	      val upL = n ^ ".........\r\n"
+	  in
+	      print(upL)
+	  end;	
     in
-	print(inpp)
-    end
+	f inL
+    end;
 
 (* action time *)
-do_do(inLine);
+do_do(inLine());
