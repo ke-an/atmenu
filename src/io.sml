@@ -11,7 +11,7 @@ fun do_do inL =
 	fun f n =
 	  let
 	      val upL = n ^ ".........\r\n"
-	      fun prompt() = (print("___output___" ^ "\r\n"); do_do(inLine());)
+	      fun prompt() = (print("___output___" ^ "\r\n") do_do(inLine());)
 	  in
 	      print(upL);
 	      prompt()
