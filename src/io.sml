@@ -1,18 +1,24 @@
 
 open TextIO;
 
-val inputMsg = "------Enter text string--:"
-val inputCmnt = "-------------------------"
+val inputMsg  =  "----Enter text string----:\r\n"
+val inputCmnt =  "--------------------------\r\n"
 
 fun inLine() = valOf(inputLine(stdIn))
 
-fun prompt (msg) =
-  let
-      val oo = "hhh";
-  in
-      (print(msg ^ "\r\n"))
-  end
-      
+fun do_do inL =
+    let
+	fun f n =
+	  let
+	      val upL = n ^ ".........\r\n"
+	      fun prompt() = (print("___output___" ^ "\r\n") do_do(inLine());)
+	  in
+	      print(upL);
+	      prompt()
+	  end;
+    in
+	f inL
+    end;
 
 (* action time *)
-prompt(inputMsg);
+do_do(inLine());
